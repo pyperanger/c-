@@ -78,8 +78,11 @@ namespace cpprootcheck {
         return ret;
     }
 
-    int rootkit_pid::pid_alive(int pid) {
-        return kill((pid_t) pid, 0);
+    bool rootkit_pid::pid_alive(int pid) {
+        if (kill((pid_t) pid, 0) == 0) {
+            return true;
+        }
+        return false;
     }
 
     bool rootkit_pid::pid_DIRexist(int pid) {

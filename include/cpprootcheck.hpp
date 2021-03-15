@@ -24,7 +24,7 @@ namespace cpprootcheck {
         private:
             void                get_pid_max();
             std::vector<int>    pssnapshoot();
-            int                 pid_alive(int);
+            bool                pid_alive(int);
             bool                pid_DIRexist(int); 
             std::string         pid_cmdline(int);
     };
