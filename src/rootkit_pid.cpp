@@ -30,10 +30,10 @@ namespace cpprootcheck {
             if (rootkit_pid::pid_alive(pid) && rootkit_pid::pid_DIRexist(pid) && !(std::find(ps_shot.begin(), ps_shot.end(),pid)!=ps_shot.end())) {
                 if (rootkit_pid::verbose) {
                     std::cout
-                    << "rootkit_pid Detected on pid "  
+                    << "[ rootkit_pid ] Detected on pid "  
                     << pid 
                     << std::endl
-                    << "CMDLINE->\t"
+                    << "\t\tCMDLINE->\t"
                     << rootkit_pid::pid_cmdline(pid)
                     << std::endl;
                 } 

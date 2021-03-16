@@ -1,4 +1,6 @@
 #pragma once 
+#include "rootkit_pid.hpp"
+
 #include <iostream>
 #include <vector>
 
@@ -7,26 +9,7 @@
 #endif
         
 namespace cpprootcheck {
-    // Global namespace vars
-    class rootkit_pid {
-        public:
-            struct PID_INFO {
-                std::string cmdline;
-                pid_t       pid;
-                // append with more pid information if needed
-            };
-            // To user export malicius PID info
-            std::vector<PID_INFO> PIDS;
-            bool    verbose;            
-            int     max_pid;            
-            int     hidepid();
-            rootkit_pid();
-        private:
-            void                get_pid_max();
-            std::vector<int>    pssnapshoot();
-            bool                pid_alive(int);
-            bool                pid_DIRexist(int); 
-            std::string         pid_cmdline(int);
-    };
+    // Global
+    class cpprootcheck {};
 }
 
